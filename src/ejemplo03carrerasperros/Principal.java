@@ -6,38 +6,40 @@ public class Principal {
 		
 		Perro [] gateras = new Perro[5];
 		
+		Criadero criaderoLosGalgosAfganos = new Criadero("Los Galgos Afganos", "Kabul");
+		Criadero criaderoLosGalgosRusos = new Criadero("Los Galgos Rusos",   "Moscú");
+		
+		
 		gateras[0] = new Perro("Chiflo", 180, 9);
-		gateras[1] = new Perro("Zurdo",67, 12);
+		gateras[0].setCriadero(criaderoLosGalgosAfganos);
+		
+		gateras[1] = new Perro("Zurdo", 67, 12);
+		gateras[1].setCriadero(criaderoLosGalgosRusos);
+		
+		gateras[2] = new Perro("Estrella", 72, 10);
+		gateras[2].setCriadero(criaderoLosGalgosRusos);
 		
 		
-		gateras[2] = gateras[0];
-		gateras[0] = null;
 		
-		
-		
-
 		for (int i = 0; i < gateras.length; i++){
 			
 			System.out.println( 
 					"Gatera " + i  + " : " +  
 							((gateras[i] != null) ? 
-									gateras[i].getNombre() + " tiene " + gateras[i].getEdad()  + " meses " 
+									gateras[i].getNombre() + "(" + gateras[i].getCriadero().getNombre() +")  tiene " + gateras[i].getEdad()  + " meses " 
 									: "VACIA" ));
 		}
 		
-		System.out.println("------");
 		
-		for (Perro perro: gateras){
-			if (perro != null) {
-				System.out.println(perro.getNombre());
-			} else {
-				System.out.println("vacia");
-			}
-		}
+		Perro perro =gateras[1]; 
+		perro .caminar();
+		System.out.println(perro.getNombre() + " " + perro.getVelocidadActual());
+		perro.acelerar(20);
+		System.out.println(perro .getNombre() + " " + perro.getVelocidadActual());
 		
-		System.out.println(gateras[6].getNombre());
+
 		
-		///System.out.println("La velocidad maxima de " + perro.getNombre() + " es " + perro.getVelocidadMaxima() + " km/h");
+		
 		
 		
 	}
