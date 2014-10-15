@@ -25,9 +25,8 @@ public class Principal {
 			
 			System.out.println( 
 					"Gatera " + i  + " : " +  
-							((gateras[i] != null) ? 
-									gateras[i].getNombre() + "(" + gateras[i].getCriadero().getNombre() +")  tiene " + gateras[i].getEdad()  + " meses " 
-									: "VACIA" ));
+										gateras[i]
+					);
 		}
 		
 		
@@ -35,7 +34,10 @@ public class Principal {
 		perro .caminar();
 		System.out.println(perro.getNombre() + " " + perro.getVelocidadActual());
 		perro.acelerar(20);
-		System.out.println(perro .getNombre() + " " + perro.getVelocidadActual());
+		System.out.println(perro.getNombre() + " " + perro.getVelocidadActual());
+		
+		
+		
 		
 
 		

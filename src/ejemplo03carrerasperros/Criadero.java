@@ -19,4 +19,9 @@ public class Criadero {
 		return nombre;
 	}
 	
+	@Override
+	public String toString() {
+		return this.nombre;
+	}
+
 }
