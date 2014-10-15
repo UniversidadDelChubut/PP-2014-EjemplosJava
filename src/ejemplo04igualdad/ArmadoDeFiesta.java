@@ -16,6 +16,7 @@ public class ArmadoDeFiesta {
 		fiesta.invitar( new Persona(31456223, "Andres Perez",   sdf.parse("15/01/1978")));
 		fiesta.invitar( new Persona(34123127, "Ana Gomez",      sdf.parse("01/09/1989")));
 		
+		System.out.println("===INVITADOS===");
 		for (Persona invitado: fiesta.getInvitados()){
 			if (invitado != null)
 				System.out.println(invitado);
