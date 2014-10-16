@@ -25,14 +25,49 @@ public class Persona {
 	public Date getFechaNacimiento() {
 		return fechaNacimiento;
 	}
-	
+
+
 	@Override
 	public String toString() {
-		return this.nombre + " (DNI " + this.numeroDocumento + ")";
+		return this.nombre + " (DNI " + this.numeroDocumento + ") ";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + numeroDocumento;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Persona other = (Persona) obj;
+		if (numeroDocumento != other.numeroDocumento)
+			return false;
+		return true;
+	}
+
+	/*
+	@Override
+	public boolean equals(Object otraPersona){
+		if (! ( otraPersona instanceof Persona))
+			return false;
+		return this.numeroDocumento == ((Persona)otraPersona).numeroDocumento;
 	}
 	
 	
-	public boolean equals(Persona otraPersona){
-		return this.numeroDocumento == otraPersona.numeroDocumento;
+	@Override
+	public int hashCode() {
+		return this.numeroDocumento;
 	}
+	*/
+	
+	
 }
