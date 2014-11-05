@@ -1,4 +1,4 @@
-package ejempo09herencia;
+package ejemplo09herencia;
 
 public class SocioVitalicio extends Socio {
 
