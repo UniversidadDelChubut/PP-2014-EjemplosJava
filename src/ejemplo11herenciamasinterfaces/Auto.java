@@ -4,7 +4,6 @@ public class Auto extends VehiculoTerrestre implements Aerotransportable {
 
 	private String modelo;
 	private String tipo;
-	//Completar ejemplo usando clases como discriminantes
 
 	@Override
 	public void avanzar() {

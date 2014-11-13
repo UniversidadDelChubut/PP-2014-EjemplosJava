@@ -1,43 +1,72 @@
 package ejemplo11herenciamasinterfaces;
 
-import javax.xml.bind.ValidationEventHandler;
-
 public class Test {
 
-	/**
+	/** 
 	 * @param args
 	 */
 	public static void main(String[] args) {
 
+		
+		
+		// ¿A qué variables puedo asignar una referencia?
+		
+		Moto moto = new Moto();
+		moto.getCantidadRuedas();
+		
+		
+		Vehiculo[] flota = new Vehiculo[20];
+		
+		flota[0] = moto;
+		flota[1] = new AvionTransporte();
+		
+		
+		flota[0].avanzar();
+		
+		Moto moto2 = null;
+		
+		if (flota[0] instanceof Moto ) {
+			moto2 = (Moto)flota[0];
+		}
+		
+		
+		VehiculoTerrestre vt = (VehiculoTerrestre)flota[0];
+		vt.getPeso();
+		
+		VehiculoAcuatico va = new Lancha();
+		
+		
+		
+		//((Carguero)va).cargar(moto);;
+		 
+		
+		//¿Qué es el tipo concreto y el tipo de referencia?
 
 		
-		VehiculoTerrestre vt = new Auto();
-		System.out.println( "APTO ASFALTO " + vt.isAptoAsfalto());
 		
-		vt = new Moto();
-		System.out.println( "APTO ASFALTO " + vt.isAptoAsfalto());
-		
-		vt = new MinningTruck();
-		System.out.println( "APTO ASFALTO " + vt.isAptoAsfalto());
+		// Cómo hago para acceder a los métodos específicos del objeto 
 		
 		
-		Auto a = new Auto();
-		vt = a; 
-		Vehiculo v = vt;
+		//Cómo puedo saber la clase de un objeto
 		
-		Aerotransportable at = a;
-		MinningTruck mt = new MinningTruck();
-		
-		AvionTransporte avion =  new AvionTransporte();
+		System.out.println( va.getClass().getName());
 		
 		
-		Carguero c = new Carguero();
-		
-		Lancha l = new Lancha();
 		
 		
-		avion.cargar( l );
-		c.cargar( l );
+		Flota <Moto> flotaMia = new Flota<>(10);
+		
+		flotaMia.agregrIntegrante(new Moto());
+	
+		
+		Flota <Lancha> otraFlota = new Flota<>(5);
+		
+		//otraFlota.agregrIntegrante(integrante);
+	
+		
+		
+		
+		
 		
 		
 		

@@ -8,8 +8,8 @@ public class Carguero extends VehiculoAcuatico {
 		
 	}
 	
-	public void cargar(Transportable t) {
-		
+	public boolean cargar(Transportable t) {
+		return true;
 	}
 	
 	

@@ -1,6 +1,6 @@
 package ejemplo11herenciamasinterfaces;
 
-public class Lancha implements Aerotransportable {
+public class Lancha extends VehiculoAcuatico implements Aerotransportable {
 
 	private int peso;
 	private int volumen;
@@ -16,4 +16,9 @@ public class Lancha implements Aerotransportable {
 		return this.volumen;
 	}
 
+	@Override
+	public void avanzar() {
+		// TODO Auto-generated method stub
+		
+	}
 }
